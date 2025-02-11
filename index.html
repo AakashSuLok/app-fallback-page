@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install Our App</title>
+    <script>
+        function redirectToStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            // Check if the user is on Android
+            if (/android/i.test(userAgent)) {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.gennie.vaidikavignanam";
+                return;
+            }
+
+            // Check if the user is on iOS
+            if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = "https://apps.apple.com/app/id1557728556";
+                return;
+            }
+
+            // If neither Android nor iOS, show the webpage (for desktop users)
+            document.getElementById("web-content").style.display = "block";
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #web-content {
+            display: none;
+        }
+    </style>
+</head>
+<body onload="redirectToStore()">
+    <div id="web-content">
+        <h1>Welcome to Our App</h1>
+        <p>Download our app to get started!</p>
+        <p><a href="https://play.google.com/store/apps/details?id=com.gennie.vaidikavignanam">Get it on Google Play</a></p>
+        <p><a href="https://apps.apple.com/app/id1557728556">Download on the App Store</a></p>
+    </div>
+    <footer>
+        <p>&copy; 2023 Our App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
