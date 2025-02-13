@@ -3,6 +3,7 @@
         "apps": [],
         "details": [
             {
+                "appID": "7LWBN46Z25.com.gennie.vaidikavignanam",
                 "paths": [ "/app-fallback-page/*" ]
             }
         ]
