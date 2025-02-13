@@ -1,0 +1,10 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "paths": [ "/app-fallback-page/*" ]
+            }
+        ]
+    }
+}
