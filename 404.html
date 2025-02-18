@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <base href="/">
     <meta charset="UTF-8">
@@ -24,27 +25,54 @@
             // If neither Android nor iOS, show the webpage (for desktop users)
             document.getElementById("web-content").style.display = "block";
         }
+
+        // // metadata
+        // function updateMetaTags() {
+        //     const params = new URLSearchParams(window.location.search);
+        //     const productName = params.get('name') || 'Demo App';
+        //     const productImage = params.get('image') || 'https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png';
+        //     const productDesc = params.get('desc') || 'Demo app description';
+
+        //     document.querySelector("meta[property='og:title']").setAttribute("content", productName);
+        //     document.querySelector("meta[property='og:image']").setAttribute("content", productImage);
+        //     document.querySelector("meta[property='og:description']").setAttribute("content", productDesc);
+        //     // document.querySelector("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
+        // }
+        // updateMetaTags();
     </script>
+
+    <!-- Open Graph Meta Tags (Will be updated dynamically) -->
+    <meta property="og:title" content="Demo App">
+    <meta property="og:description" content="Demo app description">
+    <meta property="og:image"
+        content="https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
         }
+
         #web-content {
             display: none;
         }
     </style>
 </head>
+
 <body onload="redirectToStore()">
     <div id="web-content">
         <h1>Welcome to Our App</h1>
         <p>Download our app to get started!</p>
-        <p><a href="https://play.google.com/store/apps/details?id=com.gennie.vaidikavignanam">Get it on Google Play</a></p>
+        <p><a href="https://play.google.com/store/apps/details?id=com.gennie.vaidikavignanam">Get it on Google Play</a>
+        </p>
         <p><a href="https://apps.apple.com/app/id1557728556">Download on the App Store</a></p>
     </div>
     <footer>
         <p>&copy; 2023 Our App. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
