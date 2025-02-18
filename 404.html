@@ -54,10 +54,10 @@
             console.log("Title : ", document.getElementById('title'));
             console.log("Image : ", document.getElementById('image'));
             console.log("Description : ", document.getElementById('description'));
-
-            document.getElementById('title').setAttribute("content", "productName");
-            document.getElementById('image').setAttribute("content", productImage);
-            document.getElementById('description').setAttribute("content", productDesc);
+            document.title = "Updated Title";
+            // document.getElementById('title').setAttribute("content", "productName");
+            // document.getElementById('image').setAttribute("content", productImage);
+            // document.getElementById('description').setAttribute("content", productDesc);
             // document.querySelector("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
         }
         updateMetaTags();

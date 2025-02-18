@@ -57,9 +57,8 @@
 
             // document.getElementById("metaTitle").setAttribute("content", "productName");
 
-            document.getElementById('title').setAttribute("content", "productName");
-            document.getElementById('image').setAttribute("content", productImage);
-            document.getElementById('description').setAttribute("content", productDesc);
+            document.title = "Updated Title";
+            // document.querySelector("meta[property='og:title']").setAttribute("content", productName); // Add title update
             // document.querySelector("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
         }
         updateMetaTags();
