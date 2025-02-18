@@ -5,8 +5,12 @@
             {
                 "appID": "7BA5A34669.com.gennie.vaidikavignanam",
                 "paths": [
-                    "*",
-                    "/app-fallback-page/*"
+                    "*"
+                ],
+                "components": [
+                    {
+                        "/": "/"
+                    }
                 ]
             }
         ]
