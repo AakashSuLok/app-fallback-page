@@ -26,19 +26,19 @@
             document.getElementById("web-content").style.display = "block";
         }
 
-        // // metadata
-        // function updateMetaTags() {
-        //     const params = new URLSearchParams(window.location.search);
-        //     const productName = params.get('name') || 'Demo App';
-        //     const productImage = params.get('image') || 'https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png';
-        //     const productDesc = params.get('desc') || 'Demo app description';
+        // metadata
+        function updateMetaTags() {
+            const params = new URLSearchParams(window.location.search);
+            const productName = params.get('name') || 'Demo App';
+            const productImage = params.get('image') || 'https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png';
+            const productDesc = params.get('desc') || 'Demo app description';
 
-        //     document.querySelector("meta[property='og:title']").setAttribute("content", productName);
-        //     document.querySelector("meta[property='og:image']").setAttribute("content", productImage);
-        //     document.querySelector("meta[property='og:description']").setAttribute("content", productDesc);
-        //     // document.querySelector("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
-        // }
-        // updateMetaTags();
+            document.querySelector("meta[property='og:title']").setAttribute("content", productName);
+            document.querySelector("meta[property='og:image']").setAttribute("content", productImage);
+            document.querySelector("meta[property='og:description']").setAttribute("content", productDesc);
+            // document.querySelector("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
+        }
+        updateMetaTags();
     </script>
 
     <!-- Open Graph Meta Tags (Will be updated dynamically) -->
