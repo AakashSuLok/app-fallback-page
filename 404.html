@@ -38,22 +38,22 @@
             const productImage = params.get('image') || 'https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png';
             const productDesc = params.get('desc') || 'Demo app description';
 
-            let metaTags = document.getElementsByTagName("meta");
-            console.log("Meta Tags : ", metaTags);
-            for (let meta of metaTags) {
-                console.log("Meta Name : ", meta.getAttribute("name"));
-                console.log("Meta Content : ", meta.getAttribute("content"));
-                console.log("Meta property : ", meta.getAttribute("property"));
+            // let metaTags = document.getElementsByTagName("meta");
+            // console.log("Meta Tags : ", metaTags);
+            // for (let meta of metaTags) {
+            //     console.log("Meta Name : ", meta.getAttribute("name"));
+            //     console.log("Meta Content : ", meta.getAttribute("content"));
+            //     console.log("Meta property : ", meta.getAttribute("property"));
 
-                if (meta.getAttribute("name") === "title") {
-                    meta.setAttribute("content", "productName");
-                    break;
-                }
-            }
+            //     if (meta.getAttribute("name") === "title") {
+            //         meta.setAttribute("content", "productName");
+            //         break;
+            //     }
+            // }
 
-            // document.getElementsByTagName('meta').namedItem("title").setAttribute("content", "productName");
-            // document.getElementsByTagName('meta').namedItem("image").setAttribute("content", productImage);
-            // document.getElementsByTagName('meta').namedItem("description").setAttribute("content", productDesc);
+            document.getElementById('title').setAttribute("content", "productName");
+            document.getElementById('image').setAttribute("content", productImage);
+            document.getElementById('description').setAttribute("content", productDesc);
             // document.querySelector("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
         }
         updateMetaTags();
