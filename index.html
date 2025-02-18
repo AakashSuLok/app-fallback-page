@@ -29,6 +29,9 @@
         function updateMetaTags() {
             const params = new URLSearchParams(window.location.search);
             console.log("Param Data : ", params);
+            console.log("Param Get Name : ", params.get('name'));
+            console.log("Param Get Image : ", params.get('image'));
+            console.log("Param Get Desc : ", params.get('desc'));
             
             const productName = params.get('name') || 'Demo App';
             const productImage = params.get('image') || 'https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png';
