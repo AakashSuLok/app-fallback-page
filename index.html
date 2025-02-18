@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <base href="/">
     <meta charset="UTF-8">
@@ -32,27 +33,39 @@
             console.log("Param Get Name : ", params.get('name'));
             console.log("Param Get Image : ", params.get('image'));
             console.log("Param Get Desc : ", params.get('desc'));
-            
+
             const productName = params.get('name') || 'Demo App';
             const productImage = params.get('image') || 'https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png';
             const productDesc = params.get('desc') || 'Demo app description';
 
+            let metaTags = document.getElementsByTagName("meta");
+            console.log("Meta Tags : ", metaTags);
+            for (let meta of metaTags) {
+                console.log("Meta Name : ", meta.getAttribute("name"));
+                console.log("Meta Content : ", meta.getAttribute("content"));
+                console.log("Meta property : ", meta.getAttribute("property"));
 
+                if (meta.getAttribute("name") === "title") {
+                    meta.setAttribute("content", "productName");
+                    break;
+                }
+            }
 
-            document.getElementsByTagName('meta').namedItem("title").setAttribute("content", productName);
-            document.getElementsByTagName('meta').namedItem("image").setAttribute("content", productImage);
-            document.getElementsByTagName('meta').namedItem("description").setAttribute("content", productDesc);
-            // document.getElementsByName("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
+            // document.getElementsByTagName('meta').namedItem("title").setAttribute("content", "productName");
+            // document.getElementsByTagName('meta').namedItem("image").setAttribute("content", productImage);
+            // document.getElementsByTagName('meta').namedItem("description").setAttribute("content", productDesc);
+            // document.querySelector("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
         }
         updateMetaTags();
     </script>
 
-     <!-- Open Graph Meta Tags (Will be updated dynamically) -->
-     <meta name="title" property="og:title" content="Demo App">
-     <meta name="description" property="og:description" content="Demo app description">
-     <meta name="image" property="og:image" content="https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png">
-     <meta property="og:image" content="">
-     <meta property="og:type" content="website">
+    <!-- Open Graph Meta Tags (Will be updated dynamically) -->
+    <meta name="title" property="og:title" content="Demo App">
+    <meta name="description" property="og:description" content="Demo app description">
+    <meta name="image" property="og:image"
+        content="https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
 
 
 
@@ -62,20 +75,24 @@
             text-align: center;
             padding: 20px;
         }
+
         #web-content {
             display: none;
         }
     </style>
 </head>
+
 <body onload="redirectToStore()">
     <div id="web-content">
         <h1>Welcome to Our App</h1>
         <p>Download our app to get started!</p>
-        <p><a href="https://play.google.com/store/apps/details?id=com.gennie.vaidikavignanam">Get it on Google Play</a></p>
+        <p><a href="https://play.google.com/store/apps/details?id=com.gennie.vaidikavignanam">Get it on Google Play</a>
+        </p>
         <p><a href="https://apps.apple.com/app/id1557728556">Download on the App Store</a></p>
     </div>
     <footer>
         <p>&copy; 2023 Our App. All rights reserved.</p>
     </footer>
 </body>
+
 </html>
