@@ -39,9 +39,9 @@
 
 
 
-            document.getElementsByName("title").setAttribute("content", productName);
-            document.getElementsByName("image").setAttribute("content", productImage);
-            document.getElementsByName("description").setAttribute("content", productDesc);
+            document.getElementsByTagName('meta').namedItem("title").setAttribute("content", productName);
+            document.getElementsByTagName('meta').namedItem("image").setAttribute("content", productImage);
+            document.getElementsByTagName('meta').namedItem("description").setAttribute("content", productDesc);
             // document.getElementsByName("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
         }
         updateMetaTags();

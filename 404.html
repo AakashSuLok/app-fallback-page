@@ -38,9 +38,9 @@
             const productImage = params.get('image') || 'https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png';
             const productDesc = params.get('desc') || 'Demo app description';
 
-            document.getElementsByName("title").setAttribute("content", productName);
-            document.getElementsByName("image").setAttribute("content", productImage);
-            document.getElementsByName("description").setAttribute("content", productDesc);
+            document.getElementsByTagName('meta').namedItem("title").setAttribute("content", productName);
+            document.getElementsByTagName('meta').namedItem("image").setAttribute("content", productImage);
+            document.getElementsByTagName('meta').namedItem("description").setAttribute("content", productDesc);
             // document.querySelector("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
         }
         updateMetaTags();
