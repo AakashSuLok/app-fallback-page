@@ -5,7 +5,7 @@
     <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Install Our App</title>
+    <title>{{name}}</title>
     <script>
         function redirectToStore() {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -25,51 +25,15 @@
             // If neither Android nor iOS, show the webpage (for desktop users)
             document.getElementById("web-content").style.display = "block";
         }
-
-        // metadata
-        function updateMetaTags() {
-            const params = new URLSearchParams(window.location.search);
-            console.log("Param Data : ", params);
-            console.log("Param Get Name : ", params.get('name'));
-            console.log("Param Get Image : ", params.get('image'));
-            console.log("Param Get Desc : ", params.get('desc'));
-
-            const productName = params.get('name') || 'Demo App';
-            const productImage = params.get('image') || 'https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png';
-            const productDesc = params.get('desc') || 'Demo app description';
-
-            // let metaTags = document.getElementsByTagName("meta");
-            // console.log("Meta Tags : ", metaTags);
-            // for (let meta of metaTags) {
-            //     console.log("Meta Name : ", meta.getAttribute("name"));
-            //     console.log("Meta Content : ", meta.getAttribute("content"));
-            //     console.log("Meta property : ", meta.getAttribute("property"));
-
-            //     if (meta.getAttribute("name") === "title") {
-            //         meta.setAttribute("content", "productName");
-            //         break;
-            //     }
-            // }
-
-            console.log("Title : ", document.getElementById('title'));
-            console.log("Image : ", document.getElementById('image'));
-            console.log("Description : ", document.getElementById('description'));
-
-            // document.getElementById("metaTitle").setAttribute("content", "productName");
-
-            document.title = "Updated Title";
-            // document.querySelector("meta[property='og:title']").setAttribute("content", productName); // Add title update
-            // document.querySelector("meta[property='og:url']").setAttribute("content", window.location.href); // Add URL update
-        }
-        updateMetaTags();
     </script>
 
     <!-- Open Graph Meta Tags (Will be updated dynamically) -->
     <!-- <meta id="title" property="og:title" content="Demo App"> -->
-    <meta id="description" property="og:description" content="Demo app description">
+    
+    <meta id="description" property="og:description" content="{{desc}}">
     <meta id="image" property="og:image"
-        content="https://prod-website-a2j4h8t1f6.vignanam.guru/images/logo/Vignanam_Fire_Logo.png">
-    <meta property="og:image" content="">
+        content="{{image}}">
+    <!-- <meta property="og:image" content=""> -->
     <meta property="og:type" content="website">
 
 
