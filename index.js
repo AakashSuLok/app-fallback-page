@@ -5,11 +5,13 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-    const title = req.query.title || "Guest"; // Get name from query parameter
+// Handle dynamic paths
+app.get("/:page", (req, res) => {
+    const { page } = req.params; // Capture dynamic page name
+    const title = req.query.title || "Guest";
     const imageUrl = req.query.image || "";
     const description = req.query.description || "Description";
-    
+
     fs.readFile(path.join(__dirname, "index.html"), "utf8", (err, data) => {
         if (err) {
             res.status(500).send("Error loading the page");
