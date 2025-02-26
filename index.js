@@ -44,9 +44,9 @@ const servePage = async (req, res) => {
         }
 
         let htmlContent = data
-            .replace("{{title}}", title)
-            .replace("{{imageUrl}}", imageUrl)
-            .replace("{{description}}", description)
+            .replace("{{name}}", title)
+            .replace("{{image}}", imageUrl)
+            .replace("{{desc}}", description)
             .replace("{{apiData}}", JSON.stringify(apiData));
 
         res.send(htmlContent);
