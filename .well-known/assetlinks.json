@@ -5,8 +5,12 @@
         ],
         "target": {
             "namespace": "android_app",
-            "package_name": "com.example.deep_link_demo_app",
+            "package_name": "com.app.sulok",
             "sha256_cert_fingerprints": [
+                "b4:9b:7d:e9:22:f8:1e:f4:e4:38:32:f9:83:2b:bc:08:3f:08:21:15:e4:f1:32:c0:42:56:15:c7:a9:fc:92:8b",
+                "17:3a:d0:32:08:23:3b:96:5c:4a:23:c8:78:c0:bd:0c:0b:72:21:f3:02:3d:f2:4d:88:88:76:36:ad:83:ee:1c",
+                "ee:82:2e:e6:32:19:b1:6a:ad:9d:6f:4e:13:06:27:b8:9a:12:46:fa:e5:2d:bb:3b:5e:fc:d4:62:b8:bd:61:97",
+                "b2:79:58:79:9a:5a:e4:73:13:05:76:35:c4:c0:8c:bb:e4:41:8e:50:56:1e:05:43:58:75:de:ea:ea:4b:3f:0b",
                 "93:63:1C:20:91:A6:8E:15:31:64:EB:F1:3E:DE:63:5B:A7:91:89:40:0E:8C:80:C0:DA:A4:96:88:8F:61:9A:A3",
                 "CB:52:56:40:14:A5:82:30:A6:1F:76:E1:21:94:63:71:73:87:38:14:C1:B1:F6:75:18:8A:4F:85:A0:CD:D9:EB"
             ]

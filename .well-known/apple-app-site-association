@@ -3,6 +3,17 @@
         "apps": [],
         "details": [
             {
+                "appID": "7BA5A34669.com.sulok.app",
+                "paths": [
+                    "*"
+                ],
+                "components": [
+                    {
+                        "/": "/"
+                    }
+                ]
+            },
+            {
                 "appID": "7BA5A34669.com.gennie.vaidikavignanam",
                 "paths": [
                     "*"

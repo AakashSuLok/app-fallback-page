@@ -1,33 +1,73 @@
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-
+const axios = require("axios"); // Add axios for API calls
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Function to serve the HTML file with dynamic values
-const servePage = (req, res) => {
+const servePage = async (req, res) => {
+    console.log("Request query 1:", req.params, req.path);
     const title = req.query.title || "Guest";
     const imageUrl = req.query.image || "";
     const description = req.query.description || "Description";
 
-    fs.readFile(path.join(__dirname, "index.html"), "utf8", (err, data) => {
+    // Check if the request contains a deep link
+    const deepLinkId = req.params.id;
+    const deepLinkType = req.params.type;
+
+    console.log("Request query 2:", deepLinkId, deepLinkType);
+    let apiData = {};
+    if (deepLinkId && deepLinkType) {
+        console.log("Fetching data from API");
+        try {
+            const response = await axios.get(`https://links-api-i5vi3qr5ex.staging.sulok.app/link`, {
+                params: { id: deepLinkId, type: deepLinkType },
+                headers: { 'x-api-key': 'uC3NXUqcsk8AIcOPKKx4Oawr1qJdAjcyaJ3IkbSu' }
+            });
+            apiData = response.data;
+
+            console.log("API data:", apiData);
+        } catch (error) {
+            console.error("Error fetching API data:", error);
+        }
+    }
+
+    // Serve the HTML file with dynamic values
+    const filePath = path.join(__dirname, "index.html");
+    fs.readFile(filePath, "utf8", (err, data) => {
         if (err) {
-            res.status(500).send("Error loading the page");
+            console.error("Error reading HTML file:", err);
+            res.status(500).send("Internal Server Error");
             return;
         }
-        const modifiedHtml = data
-            .replace("{{name}}", title)
-            .replace("{{desc}}", description)
-            .replace("{{image}}", imageUrl);
-        res.send(modifiedHtml);
+
+        let htmlContent = data
+            .replace("{{title}}", title)
+            .0("{{imageUrl}}", imageUrl)
+            .replace("{{description}}", description)
+            .replace("{{apiData}}", JSON.stringify(apiData));
+
+        res.send(htmlContent);
     });
 };
 
 // Handle requests with and without a page
-app.get("/", servePage); // Default route when no page is specified
-app.get("/:page", servePage); // Dynamic route for any page
+app.get("/:type/:id", servePage); // Dynamic route for any page
+
+// Middleware to handle unmatched routes and serve default HTML page
+app.use((req, res) => {
+    const filePath = path.join(__dirname, "index.html");
+    fs.readFile(filePath, "utf8", (err, data) => {
+        if (err) {
+            console.error("Error reading default HTML file:", err);
+            res.status(500).send("Internal Server Error");
+            return;
+        }
+        res.send(data);
+    });
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
