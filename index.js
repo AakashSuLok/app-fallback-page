@@ -44,10 +44,10 @@ const servePage = async (req, res) => {
         }
 
         let htmlContent = data
-            .replace("{{name}}", apiData.Title || title)
-            .replace("{{image}}", apiData.ImageUrl || imageUrl)
-            .replace("{{desc}}", apiData.Description || description)
-            .replace("{{apiData}}", JSON.stringify(apiData));
+            .replace(/{{name}}/g, apiData.Title || title)
+            .replace(/{{image}}/g, apiData.ImageUrl || imageUrl)
+            .replace(/{{desc}}/g, apiData.Description || description)
+            .replace(/{{apiData}}/g, JSON.stringify(apiData));
 
         res.send(htmlContent);
     });
