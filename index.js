@@ -8,16 +8,14 @@ const PORT = process.env.PORT || 3000;
 
 // Function to serve the HTML file with dynamic values
 const servePage = async (req, res) => {
-    console.log("Request query 1:", req.params, req.path);
-    const title = req.query.title || "Guest";
+    const title = req.query.title || "SuLok";
     const imageUrl = req.query.image || "";
-    const description = req.query.description || "Description";
+    const description = req.query.description || "A Social Network for Organization.";
 
     // Check if the request contains a deep link
     const deepLinkId = req.params.id;
     const deepLinkType = req.params.type;
 
-    console.log("Request query 2:", deepLinkId, deepLinkType);
     let apiData = {};
     if (deepLinkId && deepLinkType) {
         console.log("Fetching data from API");
@@ -28,7 +26,6 @@ const servePage = async (req, res) => {
             });
             apiData = response.data;
 
-            console.log("API data:", apiData);
         } catch (error) {
             console.error("Error fetching API data:", error);
         }

@@ -3,7 +3,18 @@
         "apps": [],
         "details": [
             {
-                "appID": "7BA5A34669.com.sulok.app",
+                "appID": "AAHACHCRAP.com.prelok.app",
+                "paths": [
+                    "*"
+                ],
+                "components": [
+                    {
+                        "/": "/"
+                    }
+                ]
+            },
+            {
+                "appID": "AAHACHCRAP.com.sulok.app",
                 "paths": [
                     "*"
                 ],
