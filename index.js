@@ -6,31 +6,6 @@ const axios = require("axios"); // Add axios for API calls
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve .well-known directory statically with appropriate content types
-app.use("/.well-known", (req, res, next) => {
-    const filePath = path.join(__dirname, ".well-known", req.path);
-    
-    // Read the file MIME type dynamically
-    fs.stat(filePath, (err, stats) => {
-        if (err || !stats.isFile()) {
-            return next(); // Continue to other routes if file not found
-        }
-        
-        // Set content type based on file extension
-        const ext = path.extname(filePath);
-        const mimeTypes = {
-            ".json": "application/json",
-            ".txt": "text/plain",
-            ".xml": "application/xml",
-            ".html": "text/html",
-        };
-
-        if (mimeTypes[ext]) {
-            res.setHeader("Content-Type", mimeTypes[ext]);
-        }
-        next();
-    });
-}, express.static(path.join(__dirname, ".well-known")));
 
 // Function to serve the HTML file with dynamic values
 const servePage = async (req, res) => {
@@ -77,7 +52,7 @@ const servePage = async (req, res) => {
 };
 
 // Handle requests with and without a page
-app.get("/:type/:id", servePage); // Dynamic route for any page
+// app.get("/:type/:id", servePage); // Dynamic route for any page
 
 // Middleware to handle unmatched routes and serve default HTML page
 app.use((req, res) => {
