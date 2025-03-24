@@ -3,20 +3,8 @@
       "apps": [],
       "details": [
         {
-          "appID": [
-            "AAHACHCRAP.com.prelok.app"
-          ],
-          "paths": [
-            "*"
-          ],
-          "components": [
-            {
-              "/": "/*"
-            }
-          ]
-        },
-        {
-          "appID": [
+          "appIDs": [
+            "AAHACHCRAP.com.prelok.app",
             "AAHACHCRAP.com.sulok.app"
           ],
           "paths": [
