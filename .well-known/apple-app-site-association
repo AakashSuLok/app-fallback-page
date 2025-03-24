@@ -1,40 +1,33 @@
 {
     "applinks": {
-        "apps": [],
-        "details": [
+      "apps": [],
+      "details": [
+        {
+          "appID": [
+            "AAHACHCRAP.com.prelok.app"
+          ],
+          "paths": [
+            "*"
+          ],
+          "components": [
             {
-                "appID": "AAHACHCRAP.com.prelok.app",
-                "paths": [
-                    "*"
-                ],
-                "components": [
-                    {
-                        "/": "/"
-                    }
-                ]
-            },
-            {
-                "appID": "AAHACHCRAP.com.sulok.app",
-                "paths": [
-                    "*"
-                ],
-                "components": [
-                    {
-                        "/": "/"
-                    }
-                ]
-            },
-            {
-                "appID": "7BA5A34669.com.gennie.vaidikavignanam",
-                "paths": [
-                    "*"
-                ],
-                "components": [
-                    {
-                        "/": "/"
-                    }
-                ]
+              "/": "/"
             }
-        ]
+          ]
+        },
+        {
+          "appID": [
+            "AAHACHCRAP.com.sulok.app"
+          ],
+          "paths": [
+            "*"
+          ],
+          "components": [
+            {
+              "/": "/"
+            }
+          ]
+        }
+      ]
     }
-}
+  }
