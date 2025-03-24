@@ -6,6 +6,9 @@ const axios = require("axios"); // Add axios for API calls
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Serve .well-known directory statically
+app.use("/.well-known", express.static(path.join(__dirname, ".well-known")));
+
 // Function to serve the HTML file with dynamic values
 const servePage = async (req, res) => {
     const title = req.query.title || "SuLok";
