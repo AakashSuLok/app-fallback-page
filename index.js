@@ -5,7 +5,20 @@ const axios = require("axios"); // Add axios for API calls
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+// Serve static files from `.well-known`
+app.get("/.well-known/apple-app-site-association", (req, res) => {
+    const filePath = path.join(__dirname, ".well-known", "apple-app-site-association");
+    
+    fs.readFile(filePath, "utf8", (err, data) => {
+        if (err) {
+            res.status(404).send("File not found");
+            return;
+        }
 
+        res.setHeader("Content-Type", "application/json");
+        res.send(data);
+    });
+});
 
 // Function to serve the HTML file with dynamic values
 const servePage = async (req, res) => {
@@ -52,7 +65,7 @@ const servePage = async (req, res) => {
 };
 
 // Handle requests with and without a page
-// app.get("/:type/:id", servePage); // Dynamic route for any page
+app.get("/:type/:id", servePage); // Dynamic route for any page
 
 // Middleware to handle unmatched routes and serve default HTML page
 app.use((req, res) => {
