@@ -1,21 +1,27 @@
 {
     "applinks": {
-      "apps": [],
-      "details": [
-        {
-          "appIDs": [
+        "apps": [],
+        "details": [
+            {
+                "appIDs": [
+                    "AAHACHCRAP.com.prelok.app",
+                    "AAHACHCRAP.com.sulok.app"
+                ],
+                "paths": [
+                    "*"
+                ],
+                "components": [
+                    {
+                        "/": "/*"
+                    }
+                ]
+            }
+        ]
+    },
+    "webcredentials": {
+        "apps": [
             "AAHACHCRAP.com.prelok.app",
             "AAHACHCRAP.com.sulok.app"
-          ],
-          "paths": [
-            "*"
-          ],
-          "components": [
-            {
-              "/": "/*"
-            }
-          ]
-        }
-      ]
+        ]
     }
-  }
+}
